@@ -1,15 +1,78 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro">
 
-        
- <changeSet author="RAML" id="d1fc2122-a00f-497d-94aa-fca06fa03277">
+    <!-- Sprint 1 changes -->
+    <changeSet author="RAML" id="d1fc2122-a00f-497d-94aa-fca06fa03277">
         <tagDatabase tag="Sprint01_2025-01-25"/>
     </changeSet>
     <include file="../changelogs/Sprint01_2025-01-25.xml" relativeToChangelogFile="true"/>
 
- <changeSet author="RAML" id="1ab111ad-57fe-472c-b4ed-ad5c184e70c4">
-        <tagDatabase tag="Sprint02_2025-01-27"/>
+    <!-- Sprint 2 changes -->
+    <changeSet author="RAML" id="1ab111ad-57fe-472c-b4ed-ad5c184e70c4">
+        <tagDatabase tag="Sprint02_2025-02-28"/>
     </changeSet>
-    <include file="../changelogs/Sprint02_2025-01-27.xml" relativeToChangelogFile="true"/>
+    <include file="../changelogs/Sprint02_2025-02-28.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 3 changes -->
+    <changeSet author="RAML" id="3a4b5c6d-7e8f-9012-3456-789abcdef000">
+        <tagDatabase tag="Sprint03_2025-03-31"/>
+    </changeSet>
+    <include file="../changelogs/Sprint03_2025-03-31.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 4 changes -->
+    <changeSet author="PratikL" id="4b5c6d7e-8f90-1234-5678-9abcdef00001">
+        <tagDatabase tag="Sprint04_2025-04-30"/>
+    </changeSet>
+    <include file="../changelogs/Sprint04_2025-04-30.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 5 changes -->
+    <changeSet author="RAML" id="5c6d7e8f-9012-3456-7890-abcdef000002">
+        <tagDatabase tag="Sprint05_2025-05-31"/>
+    </changeSet>
+    <include file="../changelogs/Sprint05_2025-05-31.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 6 changes -->
+    <changeSet author="PratikL" id="6d7e8f90-1234-5678-9abc-def000000003">
+        <tagDatabase tag="Sprint06_2025-06-30"/>
+    </changeSet>
+    <include file="../changelogs/Sprint06_2025-06-30.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 7 changes -->
+    <changeSet author="RAML" id="7e8f9012-3456-7890-abcd-ef0000000004">
+        <tagDatabase tag="Sprint07_2025-07-31"/>
+    </changeSet>
+    <include file="../changelogs/Sprint07_2025-07-31.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 8 changes -->
+    <changeSet author="PratikL" id="8f901234-5678-90ab-cdef-000000000005">
+        <tagDatabase tag="Sprint08_2025-08-31"/>
+    </changeSet>
+    <include file="../changelogs/Sprint08_2025-08-31.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 9 changes -->
+    <changeSet author="RAML" id="9012345678-90ab-cdef-0123-000000000006">
+        <tagDatabase tag="Sprint09_2025-09-30"/>
+    </changeSet>
+    <include file="../changelogs/Sprint09_2025-09-30.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 10 changes -->
+    <changeSet author="PratikL" id="a123456789-abcd-ef01-2345-000000000007">
+        <tagDatabase tag="Sprint10_2025-10-31"/>
+    </changeSet>
+    <include file="../changelogs/Sprint10_2025-10-31.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 11 changes -->
+    <changeSet author="RAML" id="b234567890-bcde-f012-3456-000000000008">
+        <tagDatabase tag="Sprint11_2025-11-30"/>
+    </changeSet>
+    <include file="../changelogs/Sprint11_2025-11-30.xml" relativeToChangelogFile="true"/>
+
+    <!-- Sprint 12 changes -->
+    <changeSet author="PratikL" id="c345678901-cdef-0123-4567-000000000009">
+        <tagDatabase tag="Sprint12_2025-12-31"/>
+    </changeSet>
+    <include file="../changelogs/Sprint12_2025-12-31.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="PratikL" id="4b5c6d7e-8f90-1234-5678-9abcdef00001">
+        <tagDatabase tag="Sprint04_2025-04-30"/>
+    </changeSet>
+
+    <!-- Retail Schema Objects -->
+    <include file="changelogs/Schema3/tables/retail_products.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema3/tables/retail_orders.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema3/views/V_ORDER_DETAILS.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema3/views/V_INVENTORY_STATUS.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema3/stored_procedures/SP_UPDATE_INVENTORY.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

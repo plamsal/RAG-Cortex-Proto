@@ -1,0 +1,54 @@
+--liquibase formatted sql
+--changeset RAML:s901234567-cdef-0123-4567-890123456789  runOnChange:true
+
+
+CREATE OR REPLACE TABLE LOGISTICSDB.SHIPMENTS (
+    SHIPMENT_ID VARCHAR(50) PRIMARY KEY,
+    TRACKING_NUMBER VARCHAR(50) NOT NULL UNIQUE,
+    ORDER_ID VARCHAR(50),
+    ORIGIN_ADDRESS VARCHAR(500),
+    DESTINATION_ADDRESS VARCHAR(500),
+    CARRIER VARCHAR(100),
+    SERVICE_TYPE VARCHAR(50),
+    WEIGHT_KG DECIMAL(10,3),
+    DIMENSIONS VARCHAR(50),
+    PACKAGE_COUNT INT,
+    SHIP_DATE TIMESTAMP_NTZ,
+    ESTIMATED_DELIVERY_DATE TIMESTAMP_NTZ,
+    ACTUAL_DELIVERY_DATE TIMESTAMP_NTZ,
+    STATUS VARCHAR(30),
+    SHIPPING_COST DECIMAL(10,2),
+    INSURANCE_VALUE DECIMAL(12,2),
+    SIGNATURE_REQUIRED BOOLEAN,
+    NOTES VARCHAR(1000)
+);
+
+INSERT INTO LOGISTICSDB.SHIPMENTS VALUES
+('SHP001', 'TRK1234567890', 'ORD-2025-001', '100 Warehouse Rd, Newark, NJ', '123 Main St, New York, NY 10001', 'FedEx', 'EXPRESS', 5.500, '40x30x20 cm', 1, '2025-12-16 08:00:00', '2025-12-17 17:00:00', '2025-12-17 15:30:00', 'DELIVERED', 25.99, 500.00, TRUE, 'Signature obtained'),
+('SHP002', 'TRK2345678901', 'ORD-2025-002', '100 Warehouse Rd, Newark, NJ', '456 Oak Ave, Los Angeles, CA 90001', 'UPS', 'GROUND', 3.200, '35x25x15 cm', 1, '2025-12-17 09:00:00', '2025-12-20 17:00:00', NULL, 'IN_TRANSIT', 18.50, 250.00, FALSE, 'In transit to LA hub'),
+('SHP003', 'TRK3456789012', 'ORD-2025-003', '200 Distribution Center, Chicago, IL', '789 High St, London, UK', 'DHL International', 'INTERNATIONAL', 8.750, '50x40x30 cm', 2, '2025-12-15 10:00:00', '2025-12-22 17:00:00', NULL, 'CUSTOMS_CLEARANCE', 95.00, 1000.00, TRUE, 'Awaiting customs clearance'),
+('SHP004', 'TRK4567890123', 'ORD-2025-004', '100 Warehouse Rd, Newark, NJ', '321 Park Blvd, Chicago, IL 60601', 'USPS', 'PRIORITY', 2.100, '30x20x10 cm', 1, '2025-12-14 11:00:00', '2025-12-16 17:00:00', NULL, 'RETURNED', 12.75, 100.00, FALSE, 'Customer refused delivery'),
+('SHP005', 'TRK5678901234', 'ORD-2025-005', '300 Fulfillment Center, Seattle, WA', '654 King Rd, Manchester, UK', 'DHL International', 'ECONOMY', 4.500, '40x30x15 cm', 1, '2025-12-18 12:00:00', '2025-12-28 17:00:00', NULL, 'PENDING', 45.00, 300.00, FALSE, 'Awaiting pickup');
+
+
+CREATE OR REPLACE TABLE LOGISTICSDB.WAREHOUSES (
+    WAREHOUSE_ID VARCHAR(50) PRIMARY KEY,
+    WAREHOUSE_CODE VARCHAR(20) NOT NULL UNIQUE,
+    WAREHOUSE_NAME VARCHAR(200),
+    ADDRESS VARCHAR(500),
+    CITY VARCHAR(100),
+    STATE VARCHAR(50),
+    COUNTRY VARCHAR(50),
+    POSTAL_CODE VARCHAR(20),
+    CAPACITY_SQM DECIMAL(12,2),
+    MANAGER_NAME VARCHAR(100),
+    PHONE_NUMBER VARCHAR(20),
+    EMAIL VARCHAR(150),
+    OPERATING_HOURS VARCHAR(100)
+);
+
+INSERT INTO LOGISTICSDB.WAREHOUSES VALUES
+('WH001', 'WH-NJ-01', 'Newark Distribution Center', '100 Warehouse Rd', 'Newark', 'NJ', 'USA', '07102', 50000.00, 'Robert Warehouse', '+1-555-3001', 'newark@logistics.com', 'Mon-Sat 6AM-10PM'),
+('WH002', 'WH-IL-01', 'Chicago Distribution Center', '200 Distribution Center', 'Chicago', 'IL', 'USA', '60601', 45000.00, 'Sarah Storage', '+1-555-3002', 'chicago@logistics.com', 'Mon-Sat 6AM-10PM'),
+('WH003', 'WH-WA-01', 'Seattle Fulfillment Center', '300 Fulfillment Center', 'Seattle', 'WA', 'USA', '98101', 60000.00, 'Michael Ship', '+1-555-3003', 'seattle@logistics.com', '24/7'),
+('WH004', 'WH-TX-01', 'Dallas Distribution Hub', '400 Logistics Parkway', 'Dallas', 'TX', 'USA', '75201', 55000.00, 'Jennifer Freight', '+1-555-3004', 'dallas@logistics.com', 'Mon-Sun 5AM-11PM');

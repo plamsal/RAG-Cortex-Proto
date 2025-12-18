@@ -1,0 +1,62 @@
+--liquibase formatted sql
+--changeset RAML:m345678901-6789-abcd-ef01-234567890123  runOnChange:true
+
+
+CREATE OR REPLACE PROCEDURE MFGDB.SP_CREATE_PRODUCTION_ORDER(
+    PRODUCT_CODE_PARAM VARCHAR,
+    PRODUCT_NAME_PARAM VARCHAR,
+    QUANTITY_PARAM INT,
+    PRODUCTION_LINE_PARAM VARCHAR,
+    PRIORITY_PARAM VARCHAR,
+    CUSTOMER_REF_PARAM VARCHAR
+)
+RETURNS VARCHAR
+LANGUAGE SQL
+AS
+$$
+DECLARE
+    NEW_ORDER_ID VARCHAR;
+    NEW_ORDER_NUMBER VARCHAR;
+    ORDER_COUNT INT;
+    RESULT_MSG VARCHAR;
+BEGIN
+    -- Generate order ID and number
+    SELECT COUNT(*) + 1 INTO ORDER_COUNT FROM MFGDB.PRODUCTION_ORDERS;
+    NEW_ORDER_ID := 'PO' || LPAD(ORDER_COUNT::VARCHAR, 3, '0');
+    NEW_ORDER_NUMBER := 'MFG-' || TO_VARCHAR(CURRENT_DATE(), 'YYYY') || '-' || LPAD(ORDER_COUNT::VARCHAR, 3, '0');
+
+    -- Insert production order
+    INSERT INTO MFGDB.PRODUCTION_ORDERS (
+        ORDER_ID,
+        ORDER_NUMBER,
+        PRODUCT_CODE,
+        PRODUCT_NAME,
+        QUANTITY_ORDERED,
+        QUANTITY_PRODUCED,
+        UNIT_OF_MEASURE,
+        PRODUCTION_LINE,
+        STATUS,
+        PRIORITY,
+        CUSTOMER_ORDER_REF
+    ) VALUES (
+        :NEW_ORDER_ID,
+        :NEW_ORDER_NUMBER,
+        :PRODUCT_CODE_PARAM,
+        :PRODUCT_NAME_PARAM,
+        :QUANTITY_PARAM,
+        0,
+        'UNITS',
+        :PRODUCTION_LINE_PARAM,
+        'SCHEDULED',
+        :PRIORITY_PARAM,
+        :CUSTOMER_REF_PARAM
+    );
+
+    RESULT_MSG := 'Production order created: ' || :NEW_ORDER_NUMBER ||
+                  ' for product ' || :PRODUCT_CODE_PARAM ||
+                  ', Quantity: ' || :QUANTITY_PARAM ||
+                  ', Priority: ' || :PRIORITY_PARAM;
+
+    RETURN RESULT_MSG;
+END;
+$$;

@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="PratikL" id="8f901234-5678-90ab-cdef-000000000005">
+        <tagDatabase tag="Sprint08_2025-08-31"/>
+    </changeSet>
+
+    <!-- Logistics Schema Objects -->
+    <include file="changelogs/Schema7/tables/logistics_shipments.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema7/tables/logistics_tracking.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema7/views/V_SHIPMENT_STATUS.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema7/views/V_WAREHOUSE_CAPACITY.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema7/stored_procedures/SP_UPDATE_SHIPMENT_STATUS.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

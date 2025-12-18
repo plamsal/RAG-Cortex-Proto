@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="PratikL" id="a123456789-abcd-ef01-2345-000000000007">
+        <tagDatabase tag="Sprint10_2025-10-31"/>
+    </changeSet>
+
+    <!-- Telecom Schema Objects -->
+    <include file="changelogs/Schema9/tables/telecom_subscribers.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema9/tables/telecom_usage.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema9/views/V_SUBSCRIBER_SUMMARY.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema9/views/V_NETWORK_COVERAGE.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema9/stored_procedures/SP_CHANGE_SERVICE_PLAN.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="PratikL" id="6d7e8f90-1234-5678-9abc-def000000003">
+        <tagDatabase tag="Sprint06_2025-06-30"/>
+    </changeSet>
+
+    <!-- Manufacturing Schema Objects -->
+    <include file="changelogs/Schema5/tables/manufacturing_orders.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema5/tables/quality_control.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema5/views/V_PRODUCTION_STATUS.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema5/views/V_MATERIAL_INVENTORY.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema5/stored_procedures/SP_CREATE_PRODUCTION_ORDER.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

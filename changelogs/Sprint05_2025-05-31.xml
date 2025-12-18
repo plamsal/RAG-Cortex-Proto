@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="RAML" id="5c6d7e8f-9012-3456-7890-abcdef000002">
+        <tagDatabase tag="Sprint05_2025-05-31"/>
+    </changeSet>
+
+    <!-- HR Schema Objects -->
+    <include file="changelogs/Schema4/tables/hr_employees.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema4/tables/hr_attendance.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema4/views/V_EMPLOYEE_DIRECTORY.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema4/views/V_ATTENDANCE_SUMMARY.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema4/stored_procedures/SP_APPROVE_LEAVE_REQUEST.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
