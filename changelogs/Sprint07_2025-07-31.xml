@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="RAML" id="7e8f9012-3456-7890-abcd-ef0000000004">
+        <tagDatabase tag="Sprint07_2025-07-31"/>
+    </changeSet>
+
+    <!-- Education Schema Objects -->
+    <include file="changelogs/Schema6/tables/education_students.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema6/tables/education_enrollments.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema6/views/V_STUDENT_TRANSCRIPT.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema6/views/V_COURSE_ENROLLMENT_STATUS.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema6/stored_procedures/SP_CALCULATE_GPA.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

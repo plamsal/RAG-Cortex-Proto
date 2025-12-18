@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="RAML" id="3a4b5c6d-7e8f-9012-3456-789abcdef000">
+        <tagDatabase tag="Sprint03_2025-03-31"/>
+    </changeSet>
+
+    <!-- Finance Schema Objects -->
+    <include file="changelogs/Schema2/tables/financial_accounts.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema2/tables/financial_transactions.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema2/views/V_ACCOUNT_SUMMARY.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema2/views/V_TRANSACTION_HISTORY.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema2/stored_procedures/SP_CALCULATE_ACCOUNT_BALANCE.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

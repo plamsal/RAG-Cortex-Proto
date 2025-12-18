@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet author="RAML" id="9012345678-90ab-cdef-0123-000000000006">
+        <tagDatabase tag="Sprint09_2025-09-30"/>
+    </changeSet>
+
+    <!-- Real Estate Schema Objects -->
+    <include file="changelogs/Schema8/tables/realestate_properties.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema8/tables/realestate_showings.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema8/views/V_PROPERTY_LISTINGS.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema8/views/V_AGENT_PERFORMANCE.sql" relativeToChangelogFile="true"/>
+    <include file="changelogs/Schema8/stored_procedures/SP_SCHEDULE_SHOWING.sql" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>
